@@ -78,7 +78,7 @@ export async function initializeDatabase() {
                 DataCad TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 CONSTRAINT FK_Produtos_Categorias
                     FOREIGN KEY (IdCategoria)
-                    REFERENCES Categorias(IdCategoria)
+                    REFERENCES categorias(IdCategoria)
             );
         `);
 
