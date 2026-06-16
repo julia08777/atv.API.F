@@ -51,12 +51,13 @@ export async function initializeDatabase() {
         const dbName = process.env.DB_DATABASE || 'atv_api_f';
 
         // cria o banco de dados se ele não existir
+        await tempConnection.query(`DROP DATABASE IF EXISTS \`${dbName}\`;`);
         await tempConnection.query(`CREATE DATABASE IF NOT EXISTS \`${dbName}\`;`);
         await tempConnection.query(`USE \`${dbName}\`;`);
 
         // tabela de categorias
         await tempConnection.query(`
-            CREATE TABLE IF NOT EXISTS Categorias (
+            CREATE TABLE IF NOT EXISTS categorias (
                 IdCategoria INT AUTO_INCREMENT PRIMARY KEY,
                 NomeCategoria VARCHAR(100) NOT NULL,
                 Descricao VARCHAR(255),
