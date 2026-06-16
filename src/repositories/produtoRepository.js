@@ -27,7 +27,7 @@ const produtoRepository = {
             FROM 
                 Produtos p 
             INNER JOIN 
-                categorias c ON p.IdCategoria = c.IdCategoria;
+                Categorias c ON p.IdCategoria = c.IdCategoria;
         `;
         const [rows] = await connection.execute(sql);
         return rows;
