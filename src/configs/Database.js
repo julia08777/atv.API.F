@@ -51,7 +51,6 @@ export async function initializeDatabase() {
         const dbName = process.env.DB_DATABASE || 'atv_api_f';
 
         // cria o banco de dados se ele não existir
-        await tempConnection.query(`DROP DATABASE IF EXISTS \`${dbName}\`;`);
         await tempConnection.query(`CREATE DATABASE IF NOT EXISTS \`${dbName}\`;`);
         await tempConnection.query(`USE \`${dbName}\`;`);
 
